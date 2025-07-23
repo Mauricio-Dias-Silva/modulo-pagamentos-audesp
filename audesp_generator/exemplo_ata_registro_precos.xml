@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<AtaRegistroPrecos xmlns:gen="http://www.tce.sp.gov.br/audesp/xml/generico"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.tce.sp.gov.br/audesp/xml/ataRegistroPrecos"
+                   xsi:schemaLocation="http://www.tce.sp.gov.br/audesp/xml/ataRegistroPrecos ../ata/AUDESP4_ATA_REGISTRO_PRECOS_2025_A.XSD">
+  <Descritor>
+    <gen:AnoExercicio>2025</gen:AnoExercicio>
+    <gen:TipoDocumento>ATA_REGISTRO_PRECOS</gen:TipoDocumento>
+    <gen:Entidade>1</gen:Entidade>
+    <gen:Municipio>6300</gen:Municipio>
+    <gen:DataCriacaoXML>2025-07-22</gen:DataCriacaoXML>
+  </Descritor>
+  <DadosAta>
+    <CodigoEdital>2024000000500</CodigoEdital> <CodigoAta>2025000000123</CodigoAta> <AnoCompra>2025</AnoCompra> <Retificacao>N</Retificacao> <NumeroAtaRegistroPreco>012/2025</NumeroAtaRegistroPreco> <AnoAta>2025</AnoAta> <DataAssinatura>2025-01-15</DataAssinatura> <DataVigenciaInicio>2025-01-16</DataVigenciaInicio> <DataVigenciaFim>2026-01-15</DataVigenciaFim> <Itens> <NumeroItem>1</NumeroItem>
+      <NumeroItem>3</NumeroItem>
+      <NumeroItem>5</NumeroItem>
+    </Itens>
+    <Fornecedores>
+      <Fornecedor>
+        <CNPJ>12345678000190</CNPJ>
+        <NomeRazaoSocial>EMPRESA ABC LTDA</NomeRazaoSocial>
+        <AssinouAta>S</AssinouAta>
+      </Fornecedor>
+      <Fornecedor>
+        <CNPJ>98765432000121</CNPJ>
+        <NomeRazaoSocial>COMERCIO XYZ SA</NomeRazaoSocial>
+        <AssinouAta>S</AssinouAta>
+      </Fornecedor>
+    </Fornecedores>
+    </DadosAta>
+</AtaRegistroPrecos>

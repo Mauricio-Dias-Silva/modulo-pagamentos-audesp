@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gerador AUDESP XML{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #4B0082;"> {# Exemplo: Indigo ou um roxo escuro #}
+        <a class="navbar-brand" href="{% url 'home' %}">AUDESP Generator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gerar_df' %}">Gerar Doc. Fiscal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gerar_pg' %}">Gerar Pagamento</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+{# core/templates/core/base.html - Adicione este código antes de </body> #}
+{% load static %} {# ESSA LINHA PRECISA ESTAR NO INÍCIO DO SEU BASE.HTML #}
+
+<footer class="mt-auto"> {# mt-auto para empurrar o footer para baixo #}
+    <div class="footer-custom">
+        <div class="container py-3">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center text-md-start">
+                    {% if logo_url %}
+                    {# A URL 'logo_url' deve ser passada via contexto da view #}
+                    {% load static %} {# ESSA LINHA PRECISA ESTAR NO INÍCIO DO SEU BASE.HTML #}
+
+                    <img src="{% static logo_url %}" alt="Logo da Prefeitura de Barueri" class="img-fluid" style="max-height: 100px;">
+                    {% else %}
+                    <p style="color: white; font-size: 1.2em;">Prefeitura de Barueri</p>
+                    {% endif %}
+                </div>
+                <div class="col-md-8 text-center text-md-end">
+                    <p class="mb-0 copyright-text">
+                        © 2025 Prefeitura de Barueri | Todos os direitos reservados.
+                    </p>
+                    {# Você pode adicionar links aqui, se necessário #}
+                    {# Exemplo: <a href="#" class="footer-link">Política de Privacidade</a> #}
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Estilos para o Footer Personalizado */
+    .footer-custom {
+        /* Gradiente das cores sugeridas (roxo, verde, azul escuro) */
+        background: linear-gradient(to right, #8A2BE2, #20B2AA, #191970); /* Tons de roxo, verde-água, azul marinho */
+        padding: 20px 0; /* Espaçamento interno */
+        color: #ffffff; /* Cor do texto padrão */
+        border-top: 5px solid rgba(255, 255, 255, 0.1); /* Linha superior sutil */
+    }
+
+    .footer-custom .copyright-text {
+        font-size: 0.9em;
+        opacity: 0.8; /* Levemente transparente */
+    }
+
+    .footer-custom .footer-link {
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 15px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-custom .footer-link:hover {
+        color: #f0f0f0; /* Um pouco mais claro no hover */
+        text-decoration: underline;
+    }
+
+    /* Alinhamento da imagem para dispositivos pequenos */
+    @media (max-width: 767px) {
+        .footer-custom .col-md-4 {
+            margin-bottom: 10px; /* Espaço abaixo do logo em telas pequenas */
+        }
+    }
+</style>
+</html>

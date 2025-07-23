@@ -1,0 +1,15 @@
+{# core/templates/core/home.html #}
+{% extends 'core/base.html' %}
+
+{% block title %}Bem-vindo ao Gerador AUDESP XML{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Bem-vindo ao Gerador AUDESP XML</h1>
+        <p class="lead">Ferramenta para auxiliar a Prefeitura de Barueri na geração de arquivos XML para os módulos de Documento Fiscal e Pagamento da Fase IV do AUDESP.</p>
+        <hr class="my-4">
+        <p>Use os links na navegação acima ou os botões abaixo para começar a gerar os arquivos.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'gerar_df' %}" role="button">Gerar Documento Fiscal</a>
+        <a class="btn btn-secondary btn-lg ml-2" href="{% url 'gerar_pg' %}" role="button">Gerar Pagamento</a>
+    </div>
+{% endblock %}

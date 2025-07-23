@@ -1,0 +1,24 @@
+{# core/templates/core/gerar_df.html #}
+{% extends 'core/base.html' %}
+
+{% block title %}Gerar Documento Fiscal{% endblock %}
+
+{% block content %}
+    <h2>Gerar XML de Documento Fiscal</h2>
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }} {# Exibe a label do campo #}
+                {{ field }} {# Exibe o input do campo #}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                    <div class="invalid-feedback d-block">{{ error }}</div> {# Exibe erros de validação #}
+                {% endfor %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary mt-3">Gerar XML</button>
+    </form>
+{% endblock %}
